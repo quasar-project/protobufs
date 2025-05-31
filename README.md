@@ -1,1 +1,2 @@
-# protobufs
+### QuaSAR Protobufs
+[![Rust](https://github.com/quasar-project/protobufs/actions/workflows/build.yml/badge.svg)](https://github.com/quasar-project/protobufs/actions/workflows/build.yml)[![Publish](https://github.com/quasar-project/protobufs/actions/workflows/publish.yml/badge.svg)](https://github.com/quasar-project/protobufs/actions/workflows/publish.yml)
