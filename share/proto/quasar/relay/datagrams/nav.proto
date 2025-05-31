@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/duration.proto";
+import public "quasar/latlon.proto";
+import public "quasar/dim3.proto";
+import public "quasar/euler_angles.proto";
+
+package quasar.pb.relay.datagrams.nav;
+
+enum NavigationSource {
+  UNKNOWN = 0;
+  NMEA_FILE = 1;
+  NMEA_SERIAL_PORT = 2;
+  NMEA_UDP = 3;
+  NMEA_TCP = 4;
+  VT45 = 5;
+  FAKE = 255;
+}
+
+message Telemetry {
+  LatLon coordinate = 1;
+  float altitude = 2;
+  float velocity_course = 3;
+  float velocity_vertical = 4;
+  Dim3 gyroscope = 5;
+  Dim3 accelerometer = 6;
+  Dim3 compass = 11;
+  EulerAngles euler_axes = 7;
+  google.protobuf.Timestamp timestamp = 8;
+  float pressure = 9;
+  float temperature = 10;
+  int32 satellites = 12;
+  NavigationSource navigation_source = 13;
+}

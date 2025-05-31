@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/duration.proto";
+import public "quasar/relay/datagrams/nav.proto";
+
+package quasar.pb.relay.services.nav;
+
+message TelemetryRequest {
+  google.protobuf.Duration interval = 1;
+}
+
+message TelemetryResponse {
+  datagrams.nav.Telemetry data = 1;
+}
+
+service NavigationService {
+  rpc Telemetry(TelemetryRequest) returns (stream TelemetryResponse);
+}
