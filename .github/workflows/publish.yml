@@ -9,7 +9,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  publish cargo:
+  publish-cargo:
     runs-on: [self-hosted, debian-default-x86]
 
     steps:
@@ -28,9 +28,9 @@ jobs:
         run: cargo build --release
 
       - name: Publish
-        run: cargo publish --registry whs31 || echo "Already published, skipping"
+        run: cargo publish --no-verify --registry whs31 || echo "Already published, skipping"
 
-  publish conan:
+  publish-conan:
     runs-on: [self-hosted, debian-default-x86]
 
     steps:
@@ -40,4 +40,4 @@ jobs:
         run: conan create . -b missing --user quasar --channel dev
 
       - name: Upload
-        run: conan upload "quasar.protobufs/*" -r whs31 --force
+        run: conan upload "quasar.protobufs/*" -r whs31 --force -c

@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build rust:
+  build-rust:
     runs-on: [self-hosted, debian-default-x86]
 
     steps:
@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: cargo build 
 
-  build cxx:
+  build-cxx:
     runs-on: [self-hosted, debian-default-x86]
 
     steps:
@@ -36,4 +36,4 @@ jobs:
 
       - name: Build
         run: conan build . --build=missing
-        
+
