@@ -20,6 +20,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "share/proto/quasar/relay/datagrams/nav.proto",
 
         "share/proto/quasar/relay/services/nav.proto",
+        "share/proto/quasar/relay/services/serialnumber.proto",
       ],
       &["share/proto"],
     )?;

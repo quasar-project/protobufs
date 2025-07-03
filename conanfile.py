@@ -7,7 +7,7 @@ from conan.tools.files import copy
 
 class QuasarProtobufsRecipe(ConanFile):
     name = "quasar.protobufs"
-    version = "0.1.0"
+    version = "0.1.1"
     description = "Protobufs pack related to QuaSAR"
     author = "whs31 <whs31@github.io>"
     topics = ("grpc", "protocol", "network")
