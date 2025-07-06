@@ -14,13 +14,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "share/proto/quasar/euler_angles.proto",
         "share/proto/quasar/latlon.proto",
         "share/proto/quasar/uuid.proto",
-
         "share/proto/quasar/image.proto",
-
         "share/proto/quasar/relay/datagrams/nav.proto",
-
         "share/proto/quasar/relay/services/nav.proto",
-        "share/proto/quasar/relay/services/serialnumber.proto",
+        "share/proto/quasar/relay/services/license.proto",
       ],
       &["share/proto"],
     )?;

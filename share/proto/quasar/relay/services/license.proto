@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import public "quasar/uuid.proto";
+
+package quasar.pb.relay.services.license;
+
+enum LicenseSource {
+  LICENSE_SOURCE_HWID = 0;
+  LICENSE_SOURCE_SERIAL_NUMBER = 1;
+  LICENSE_SOURCE_UNKNOWN = 2;
+}
+
+message LicenseResponse {
+  UUID serial_number = 1;
+  LicenseSource source = 2;
+}
+
+message ValidateClientLicenseRequest {
+  UUID serial_number = 1;
+}
+
+message ValidateClientLicenseResponse {
+  bool valid = 1;
+  string message = 2;
+}
+
+service LicenseService {
+  rpc License(google.protobuf.Empty) returns (LicenseResponse);
+  rpc ValidateClientLicense(ValidateClientLicenseRequest) returns (ValidateClientLicenseResponse);
+}
