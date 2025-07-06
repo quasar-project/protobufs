@@ -12,6 +12,10 @@ mod pb {
       pub mod nav {
         tonic::include_proto!("quasar.pb.relay.services.nav");
       }
+
+      pub mod license {
+        tonic::include_proto!("quasar.pb.relay.services.license");
+      }
     }
   }
 }
