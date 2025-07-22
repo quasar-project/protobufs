@@ -6,6 +6,10 @@ mod pb {
       pub mod nav {
         tonic::include_proto!("quasar.pb.relay.datagrams.nav");
       }
+
+      pub mod shell {
+        tonic::include_proto!("quasar.pb.relay.datagrams.shell");
+      }
     }
 
     pub mod services {
@@ -15,6 +19,10 @@ mod pb {
 
       pub mod license {
         tonic::include_proto!("quasar.pb.relay.services.license");
+      }
+
+      pub mod shell {
+        tonic::include_proto!("quasar.pb.relay.services.shell");
       }
     }
   }

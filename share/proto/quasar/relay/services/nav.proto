@@ -16,5 +16,4 @@ message TelemetryResponse {
 
 service NavigationService {
   rpc Telemetry(TelemetryRequest) returns (stream TelemetryResponse);
-  rpc ForceTelemetryOverride(datagrams.nav.Telemetry) returns (google.protobuf.Empty);
 }
