@@ -28,6 +28,11 @@ message ExecutionResult {
   }
 }
 
+message SockAddr {
+  string host = 1;
+  uint32 port = 2;
+}
+
 enum WorkingDirectory {
   WORKING_DIRECTORY_TEMP = 0;
   WORKING_DIRECTORY_HOME = 1;

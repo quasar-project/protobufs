@@ -14,6 +14,7 @@ message ExecuteShellRequest {
   datagrams.shell.ExecutionPolicy execution_policy = 4;
   datagrams.shell.ExecutionArtifactType artifact_type = 5;
   bool force_color = 6;
+  optional datagrams.shell.SockAddr stdout_pipe_address = 7;
 }
 
 message ExecuteShellResponse {
