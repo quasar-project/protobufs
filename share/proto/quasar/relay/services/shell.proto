@@ -13,6 +13,7 @@ message ExecuteShellRequest {
   datagrams.shell.WorkingDirectory working_directory = 3;
   datagrams.shell.ExecutionPolicy execution_policy = 4;
   datagrams.shell.ExecutionArtifactType artifact_type = 5;
+  bool force_color = 6;
 }
 
 message ExecuteShellResponse {

@@ -1,6 +1,6 @@
 [package]
 name = "quasar-protobufs"
-version = "0.1.7"
+version = "0.1.8"
 authors = ["whs31 <ryazantsev.dl@edu.spbstu.ru>"]
 keywords = ["protocol", "protobuf"]
 edition = "2024"
