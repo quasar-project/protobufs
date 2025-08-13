@@ -22,7 +22,7 @@ message Tarball {
 message ExecutionResult {
   optional ExitStatus exit_status = 1;
   oneof artifact {
-    string stdout = 2;
+    string stdout_text = 2 [json_name = "stdout"];
     Tarball tarball = 3;
     File file = 4;
   }
