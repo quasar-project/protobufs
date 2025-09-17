@@ -19,6 +19,18 @@ enum NavigationSource {
   FAKE = 255;
 }
 
+enum FixType {
+  Invalid = 0;
+  GPS = 1;
+  DGPS = 2;
+  PPS = 3;
+  RTK = 4;
+  FloatRTK = 5;
+  DeadReckoning = 6;
+  ManualInput = 7;
+  Simulation = 8;
+}
+
 message Telemetry {
   LatLon coordinate = 1;
   float altitude = 2;
@@ -33,4 +45,11 @@ message Telemetry {
   float temperature = 10;
   int32 satellites = 12;
   NavigationSource navigation_source = 13;
+  FixType fix_type = 14;
+}
+
+message TelemetryRecord {
+  repeated Telemetry telemetry = 1;
+  google.protobuf.Duration duration = 2;
+  bytes raw_data = 3;
 }
