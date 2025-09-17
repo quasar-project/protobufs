@@ -14,6 +14,12 @@ message TelemetryResponse {
   datagrams.nav.Telemetry data = 1;
 }
 
+message SetSourceRequest {
+  datagrams.nav.NavigationSource source = 1;
+}
+
 service NavigationService {
   rpc Telemetry(TelemetryRequest) returns (stream TelemetryResponse);
+  rpc SetSource(SetSourceRequest) returns (google.protobuf.Empty);
+  rpc Reload(google.protobuf.Empty) returns (google.protobuf.Empty);
 }
