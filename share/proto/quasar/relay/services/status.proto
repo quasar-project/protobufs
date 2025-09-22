@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import public "quasar/relay/datagrams/status.proto";
+
+package quasar.pb.relay.services.status;
+
+message SystemTelemetryResponse {
+  datagrams.status.SystemTelemetry data = 1;
+}
+
+service StatusService {
+  rpc SystemTelemetry(google.protobuf.Empty) returns (stream SystemTelemetryResponse);
+}

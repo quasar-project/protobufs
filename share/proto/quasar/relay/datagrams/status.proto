@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/duration.proto";
+
+package quasar.pb.relay.datagrams.status;
+
+message MemoryInfo {
+  uint64 total = 1;
+  uint64 used = 2;
+}
+
+message CPU {
+  /// Returns load between 0.0 and 100.0
+  float load = 1;
+
+  /// Returns core frequency in MHz
+  uint64 frequency = 2;
+}
+
+message Disk {
+  string name = 1;
+  string mount_point = 2;
+  uint64 total = 3;
+  uint64 used = 4;
+}
+
+message SystemTelemetry {
+  /// Returns average system cpu load between 0.0 and 100.0
+  float global_cpu_load = 1;
+
+  repeated CPU cpu = 2;
+  repeated Disk disk = 3;
+  MemoryInfo ram = 4;
+}
