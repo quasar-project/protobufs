@@ -34,6 +34,7 @@ enum FixType {
 message Telemetry {
   LatLon coordinate = 1;
   float altitude = 2;
+  float altitude_barometric = 15;
   float velocity_course = 3;
   float velocity_vertical = 4;
   Dim3 gyroscope = 5;
