@@ -1,34 +1,7 @@
-mod pb {
-  tonic::include_proto!("quasar.pb");
+include!(concat!(env!("OUT_DIR"), "/_includes.rs"));
 
-  pub mod relay {
-    pub mod datagrams {
-      pub mod nav {
-        tonic::include_proto!("quasar.pb.relay.datagrams.nav");
-      }
+pub use quasar::pb::*;
 
-      pub mod shell {
-        tonic::include_proto!("quasar.pb.relay.datagrams.shell");
-      }
-    }
-
-    pub mod services {
-      pub mod nav {
-        tonic::include_proto!("quasar.pb.relay.services.nav");
-      }
-
-      pub mod license {
-        tonic::include_proto!("quasar.pb.relay.services.license");
-      }
-
-      pub mod shell {
-        tonic::include_proto!("quasar.pb.relay.services.shell");
-      }
-    }
-  }
-}
-
-pub use pb::*;
 use std::str::FromStr;
 
 impl From<Uuid> for uuid::Uuid {
