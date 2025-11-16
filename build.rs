@@ -1,7 +1,7 @@
 fn main() -> Result<(), Box<dyn std::error::Error>> {
   tonic_prost_build::configure()
     .include_file("_includes.rs")
-    .build_client(false)
+    .build_client(true)
     .build_server(true)
     .use_arc_self(true)
     .protoc_arg("--experimental_allow_proto3_optional")
