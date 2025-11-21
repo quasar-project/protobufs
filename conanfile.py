@@ -19,6 +19,9 @@ class QuasarProtobufsRecipe(ConanFile):
     exports = "CMakeLists.txt", "cmake/*"
     exports_sources = "*", "!build/*", "!CMakeUserPresets.json", "!.git/*", "!target/*"
 
+    user = "quasar"
+    channel = "dev"
+
     @property
     def _min_cppstd(self):
         return "20"
