@@ -10,5 +10,7 @@ message SystemTelemetryResponse {
 }
 
 service StatusService {
+  rpc GetBoardInfo(google.protobuf.Empty) returns (datagrams.status.BoardInfo);
+  rpc GetSystemInfo(google.protobuf.Empty) returns (datagrams.status.SystemInfo);
   rpc SystemTelemetry(google.protobuf.Empty) returns (stream SystemTelemetryResponse);
 }

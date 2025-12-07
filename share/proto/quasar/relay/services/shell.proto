@@ -25,7 +25,8 @@ message ExecuteShellResponse {
 }
 
 service ShellExecutionService {
-  rpc ExecuteShell(ExecuteShellRequest) returns (stream ExecuteShellResponse);
+  rpc ExecuteShell(ExecuteShellRequest) returns (ExecuteShellResponse);
+  rpc ExecuteShellWithStream(ExecuteShellRequest) returns (stream ExecuteShellResponse);
   
   rpc KillTask(UUID) returns (google.protobuf.Empty);
   rpc TerminateTask(UUID) returns (google.protobuf.Empty);

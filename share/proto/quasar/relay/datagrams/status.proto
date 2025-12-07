@@ -6,6 +6,17 @@ import "google/protobuf/duration.proto";
 
 package quasar.pb.relay.datagrams.status;
 
+message BoardInfo {
+  uint32 version_major = 1;
+  uint32 version_minor = 2;
+  string description = 3;
+}
+
+message SystemInfo {
+  string os_name = 1;
+  string target_triple = 2;
+}
+
 message MemoryInfo {
   uint64 total = 1;
   uint64 used = 2;

@@ -7,5 +7,4 @@ package quasar.pb.relay.services.license;
 
 service LicenseService {
   rpc HardwareID(google.protobuf.Empty) returns (UUID);
-  rpc SerialNumber(google.protobuf.Empty) returns (UUID);
 }
