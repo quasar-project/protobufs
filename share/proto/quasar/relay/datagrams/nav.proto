@@ -40,6 +40,7 @@ message Telemetry {
   Dim3 gyroscope = 5;
   Dim3 accelerometer = 6;
   Dim3 compass = 11;
+  float gps_course = 16;
   EulerAngles euler_axes = 7;
   google.protobuf.Timestamp timestamp = 8;
   float pressure = 9;
