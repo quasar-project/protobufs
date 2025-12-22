@@ -29,7 +29,7 @@ class QuasarProtobufsRecipe(ConanFile):
     def requirements(self):
         if self.options.grpc:
             self.requires(
-                "grpc/1.67.1", transitive_libs=True, transitive_headers=True, force=True
+                "grpc/1.72.0", transitive_libs=True, transitive_headers=True, force=True
             )
         self.requires("protobuf/5.27.0", transitive_libs=True, transitive_headers=True)
 
