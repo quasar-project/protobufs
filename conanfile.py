@@ -9,7 +9,7 @@ from conan.tools.files import rmdir
 
 class QuasarProtobufsRecipe(ConanFile):
     name = "quasar.protobufs"
-    version = "0.3.2"
+    version = "0.3.3"
     description = "Protobufs pack related to QuaSAR"
     author = "whs31 <whs31@github.io>"
     topics = ("grpc", "protocol", "network")

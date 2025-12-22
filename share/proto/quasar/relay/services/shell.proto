@@ -29,5 +29,7 @@ service ShellExecutionService {
   rpc ExecuteShellWithStream(ExecuteShellRequest) returns (stream ExecuteShellResponse);
   
   rpc KillTask(UUID) returns (google.protobuf.Empty);
+  rpc KillLast(google.protobuf.Empty) returns (UUID);
+  rpc KillAll(google.protobuf.Empty) returns (google.protobuf.Empty);
   rpc TerminateTask(UUID) returns (google.protobuf.Empty);
 }
