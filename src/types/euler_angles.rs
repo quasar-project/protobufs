@@ -1,17 +1,18 @@
-use std::fmt::{Display, Formatter, Result};
+use std::fmt::{Display, Formatter};
 
 impl Display for crate::EulerAngles {
-  fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+  fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
     write!(
       f,
-      "({0:.p$}, {1:.p$}, {2:.p$})",
-      self.roll,
-      self.pitch,
-      self.yaw,
+      "({0:.p$}°, {1:.p$}°, {2:.p$}°)",
+      self.roll.to_degrees(),
+      self.pitch.to_degrees(),
+      self.yaw.to_degrees(),
       p = f.precision().unwrap_or(1)
     )
   }
 }
+
 
 impl From<mint::EulerAngles<f32, mint::ExtraXYZ>> for crate::EulerAngles {
   fn from(v: mint::EulerAngles<f32, mint::ExtraXYZ>) -> Self {

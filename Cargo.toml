@@ -1,6 +1,6 @@
 [package]
 name = "quasar_protobufs"
-version = "0.3.3"
+version = "0.4.0"
 authors = ["whs31 <whs31@github.io>"]
 keywords = ["protocol", "protobuf"]
 edition = "2024"
@@ -8,21 +8,23 @@ publish = true
 
 [features]
 default = []
+serde = ["dep:serde"]
 grpc = ["dep:tonic", "dep:tonic-prost"]
 client = ["grpc"]
 server = ["grpc"]
 
 [dependencies]
-anyhow = "1.0.100"
-uuid = "1.18.0"
+anyhow = "1"
+uuid = "1"
 chrono = { version = "0.4", features = ["clock"] }
+serde = { version = "1.0", features = ["derive"], optional = true }
 
-prost = { version = "0.14.1", features = ["default"] }
-prost-types = { version = "0.14.1", features = ["chrono"] }
-tonic = { version = "0.14.1", optional = true }
-tonic-prost = { version = "0.14.1", optional = true }
-mint = "0.5.9"
+prost = { version = "0.14", features = ["default"] }
+prost-types = { version = "0.14", features = ["chrono"] }
+tonic = { version = "0.14", optional = true }
+tonic-prost = { version = "0.14", optional = true }
+mint = "0.5"
 
 [build-dependencies]
-tonic-build = "0.14.2"
-tonic-prost-build = "0.14.2"
+tonic-build = "0.14"
+tonic-prost-build = "0.14"

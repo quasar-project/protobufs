@@ -3,6 +3,7 @@ syntax = "proto3";
 import "google/protobuf/empty.proto";
 import "google/protobuf/duration.proto";
 import public "quasar/relay/datagrams/nav.proto";
+import public "quasar/relay/diagnostics/diagnostics.proto";
 
 package quasar.pb.relay.services.nav;
 
@@ -22,4 +23,6 @@ service NavigationService {
   rpc Telemetry(TelemetryRequest) returns (stream TelemetryResponse);
   rpc SetSource(SetSourceRequest) returns (google.protobuf.Empty);
   rpc Reload(google.protobuf.Empty) returns (google.protobuf.Empty);
+
+//  rpc ServiceDiagnostics(google.protobuf.Empty) returns (diagnostics.NetworkDiagnostics);
 }
