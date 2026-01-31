@@ -24,6 +24,9 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v3
+
       - name: Cache cargo registry
         uses: actions/cache@v3
         with:
@@ -93,6 +96,9 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Install Protoc
+        uses: arduino/setup-protoc@v3
+
       - name: Cache cargo registry
         uses: actions/cache@v3
         with:
@@ -142,4 +148,6 @@ jobs:
         run: conan create . -b missing --user quasar --channel dev
 
       - name: Upload to Conan registry
-        run: conan upload "quasar.protobufs/*" -r whs31 --force -c
+        run: |
+          conan upload "quasar.protobufs/*" -r whs31 --force -c
+          conan upload "*" -r whs31 -c || true
